@@ -1,0 +1,54 @@
+mixin reviewsItem(params={})
+  -
+    const { title, description, img, linkText } = params
+
+  .reviews__item
+    .reviews__item-image
+      img(src=`${imgUrl}/${img}`, alt="").reviews__item-image-source
+    .reviews__item-info
+      .reviews__item-title #{title}
+      .reviews__item-description #{description}
+      .reviews__item-text Кейс отзыва:
+      .reviews__item-link
+        img(src=`${icnUrl}/link.svg` alt="").reviews__item-link-icon
+        .reviews__item-link-text #{linkText}
+        a(href="").reviews__item-link-source  
+
+mixin reviewsSlider()
+  .swiper.reviews__slider.reviews__slider_after
+    .swiper-wrapper.reviews__slider-wrapper
+      .swiper-slide.reviews__slider-slide
+        +reviewsItem({title:'МГТУ им. Баумана', description:'выполнение экспертных, кадастровых и оценочных работ', linkText: 'МГТУ им. Баумана', img:'review-1.jpg'})
+      .swiper-slide.reviews__slider-slide
+        +reviewsItem({title:'МОУ Новопетровская СОШ', description:'проведение работ по экспертизе фундаментов зданий школы', linkText: 'МОУ Новопетровская СОШ', img:'review-2.jpg'})
+      .swiper-slide.reviews__slider-slide
+        +reviewsItem({title:'МГТУ им. Баумана', description:'выполнение экспертных, кадастровых и оценочных работ', linkText: 'МГТУ им. Баумана', img:'review-1.jpg'})
+      .swiper-slide.reviews__slider-slide
+        +reviewsItem({title:'МОУ Новопетровская СОШ', description:'проведение работ по экспертизе фундаментов зданий школы', linkText: 'МОУ Новопетровская СОШ', img:'review-2.jpg'})
+    .swiper-scrollbar
+    .slider-after
+      button.slider__button.slider__button_slide-next
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+    .slider-before
+      button.slider__button.slider__button_slide-prev
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+
+section.reviews
+  .reviews__container
+    header.reviews__header
+      .reviews__header-appendix 
+      h2.reviews__header-title Отзывы о нашей работе
+    .reviews__content
+      button.reviews__button.reviews__button_slide-prev
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+      +reviewsSlider()
+      button.reviews__button.reviews__button_slide-next
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>

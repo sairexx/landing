@@ -1,0 +1,14 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.content-wrapper {
+  width: 320px;
+
+  @include ut.tablet {
+    width: 720px;
+  }
+
+  @include ut.desktop {
+    width: 1200px;
+  }
+}

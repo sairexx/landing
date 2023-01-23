@@ -1,0 +1,84 @@
+mixin itemCheck()
+  .advantages__benefits-check
+    img(src=`${icnUrl}/done.svg` alt="").advantages__benefits-check-image
+
+mixin benefitItem(params={})
+  -
+    const { title, description } = params
+
+  .advantages__benefits-item
+    +itemCheck()
+    .advantages__benefits-info
+      span.advantages__benefits-info-title #{title}
+      span.advantages__benefits-info-subtitle #{description}
+
+mixin advantagesInfo(params={})
+  -
+    const { modifier } = params
+
+  .advantages__info(class=`${modifier}`)
+    p.advantages__info-text.advantages__info-text_level-1 Вы, конечно, можете закрыть наш сайт и поискать оценщиков ближе/дешевле/другого типа, но…
+    p.advantages__info-text.advantages__info-text_level-2 Любую работу мы выполняем четко и слаженно, не по шаблону – вас порадует индивидуальный подход и тщательный разбор ситуации!
+
+mixin benefitsSlider()
+  .swiper.advantages__benefits-slider
+    .swiper-wrapper.advantages__benefits-wrapper
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'С нами удобно', description:'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'Гарантии', description:'Вникаем в детали и решаем поставленные задачи в каждом отчете об оценке.'})
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'Профессионализм', description:'Услуги оказывают только сертифицированные оценщики.'})
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'Все сертификаты', description:'Отчеты имеют официальный характер и принимаются любыми инстанциями.'})
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'Надежно', description:'Мы помогаем в сборе документов в минимальные сроки.'})
+      .swiper-slide.advantages__benefits-slide
+        +benefitItem({title:'Конфиденциальность', description:'Все детали сделки будут сохранены и недоступны третьим лицам.'})
+    .swiper-scrollbar
+
+mixin benefitsList()
+  .advantages__benefits-container
+    .advantages__benefits-list
+      +benefitItem({title:'С нами удобно', description:'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      +benefitItem({title:'Гарантии', description:'Вникаем в детали и решаем поставленные задачи в каждом отчете об оценке.'})
+      +benefitItem({title:'Профессионализм', description:'Услуги оказывают только сертифицированные оценщики.'})
+      +benefitItem({title:'Все сертификаты', description:'Отчеты имеют официальный характер и принимаются любыми инстанциями.'})
+      +benefitItem({title:'Надежно', description:'Мы помогаем в сборе документов в минимальные сроки.'})
+      +benefitItem({title:'Конфиденциальность', description:'Все детали сделки будут сохранены и недоступны третьим лицам.'})
+    +advantagesInfo({modifier: 'advantages__info_desktop'})
+
+mixin advantagesHeader()
+  .advantages__header
+    .advantages__header-appendix
+    h2.advantages__header-title Причины выбрать "ЭУН" своей оценочной компанией
+
+mixin documentSlider()
+  .advantages__document
+    button.advantages__document-slider-button.advantages__document-slider-button_prev
+      <svg xmlns="http://www.w3.org/2000/svg" class='advantages__document-slider-button-image' width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 6L9 12L15 18" stroke="#898088" stroke-width="2"/>
+      </svg>
+    .swiper.advantages__document-slider
+      .swiper-wrapper.advantages__document-slider
+        .swiper-slide.advantages__document-slider-slide 
+          img(src=`${imgUrl}/slider-document.png` alt="").advantages__document-slider-slide-img
+        .swiper-slide.advantages__document-slider-slide 
+          img(src=`${imgUrl}/slider-document.png` alt="").advantages__document-slider-slide-img
+        .swiper-slide.advantages__document-slider-slide 
+          img(src=`${imgUrl}/slider-document.png` alt="").advantages__document-slider-slide-img
+        .swiper-slide.advantages__document-slider-slide 
+          img(src=`${imgUrl}/slider-document.png` alt="").advantages__document-slider-slide-img
+    button.advantages__document-slider-button.advantages__document-slider-button_next
+      <svg width="24" height="25" class='advantages__document-slider-button-image advantages__document-slider-button-image_next' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+      </svg>
+
+section.advantages
+  .advantages__container
+    +advantagesHeader()
+    +benefitsSlider()
+    .advantages__content
+      +benefitsList()
+      +documentSlider()
+    +advantagesInfo()

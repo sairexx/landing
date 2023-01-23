@@ -1,0 +1,265 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.videos {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 2.2rem 0 2rem 0;
+
+  background: #fcfcfd;
+
+  @include ut.tablet {
+    padding: 29px 0 0 0;
+  }
+
+  @include ut.desktop {
+    padding: 25px 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    width: 320px;
+    gap: 1.8rem;
+
+    @include ut.tablet {
+      width: 726px;
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      width: 1200px;
+      gap: 50px;
+      padding: 0 0 5.9rem 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    @include ut.tablet {
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      gap: 6.3rem;
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: block;
+        width: 40px;
+        height: 5px;
+
+        background-color: #c2d2df;
+
+        margin-top: 1.4rem;
+      }
+
+      @include ut.desktop {
+        margin-top: 1.9rem;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        color: #342633;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include ut.tablet {
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      background: transparent;
+      border: 2px solid #898088;
+      border-radius: 50px;
+    }
+
+    &_slide-prev {
+      // margin: 0 30px 0px 0;
+
+      @include ut.desktop {
+        margin: 0 0px 120px 0px;
+      }
+    }
+
+    &_slide-next {
+      margin: 0 7px 0px 0px;
+      transform: rotate(180deg);
+
+      @include ut.desktop {
+        margin: 0 4px 117px 0px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 176px;
+
+    @include ut.tablet {
+      width: 726px;
+      height: 317px;
+
+      .swiper-scrollbar {
+        display: none;
+      }
+    }
+    .slider-after {
+      button {
+        margin: -51px -66px 0px 0px;
+      }
+    }
+
+    .slider-before {
+      button {
+        margin: -51px 29px 0 0;
+      }
+    }
+
+    @include ut.desktop {
+      width: 100%;
+      height: 319px;
+    }
+
+    &-slide {
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 2rem;
+
+    width: 270px;
+    height: 152px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    @include ut.tablet {
+      padding: 3rem;
+      width: 483px;
+      height: 272px;
+    }
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(52, 38, 51, 0) 0%,
+        rgba(52, 38, 51, 0.77) 57.29%,
+        #342633 100%
+      );
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 19.5px;
+      left: 20px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      @include ut.tablet {
+        bottom: 30.5px;
+        left: 30px;
+      }
+
+      &-button {
+        position: relative;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+        width: 40px;
+        height: 40px;
+
+        border: 2px solid #ffb701;
+        background-color: transparent;
+        border-radius: 50%;
+
+        @include ut.tablet {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      &-text {
+        width: 163px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+
+        color: #ffffff;
+
+        @include ut.tablet {
+          width: 307px;
+          font-size: 2rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+  }
+}

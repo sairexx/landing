@@ -1,0 +1,206 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  width: 100%;
+  background-color: #342633;
+
+  @include ut.tablet {
+    background: #342633;
+  }
+
+  &__content {
+    display: flex;
+
+    gap: 7.6rem;
+
+    padding: 2.2rem 0;
+    max-width: 320px;
+
+    @include ut.tablet {
+      max-width: 720px;
+      gap: 0;
+
+      padding: 2rem 0;
+      align-items: center;
+    }
+
+    @include ut.desktop {
+      max-width: 1200px;
+
+      padding: 2.4rem 0 2.6rem 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 4rem;
+    height: 4rem;
+
+    outline: none;
+    background-color: transparent;
+    border-radius: 0.5rem;
+
+    &-text {
+      font-style: normal;
+      font-weight: 700;
+
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      font-family: vars.$default-font;
+
+      text-transform: uppercase;
+
+      color: #342633;
+
+      @include ut.desktop {
+        font-weight: 700;
+
+        font-size: 1.4rem;
+
+        line-height: 1.7rem;
+      }
+    }
+
+    &_call {
+      display: none;
+      @include ut.tablet {
+        display: flex;
+
+        width: 165px;
+        height: auto;
+
+        padding: 12.5px 0;
+        margin-left: 2.8rem;
+
+        order: 4;
+        border: none;
+        background-color: #ffb701;
+
+        @include ut.desktop {
+          margin-left: 7.8rem;
+          padding: 18.5px 0;
+          width: 277px;
+        }
+      }
+    }
+
+    &_menu {
+      border: 2px solid #ffb701;
+
+      @include ut.tablet {
+        order: 2;
+
+        margin-left: 3.8rem;
+      }
+
+      @include ut.desktop {
+        margin-left: 4.7rem;
+      }
+    }
+
+    &_contacts {
+      border: none;
+      background-color: #ffb701;
+
+      @include ut.tablet {
+        display: none;
+      }
+
+      @include ut.desktop {
+        margin-left: 5.9rem;
+      }
+    }
+  }
+
+  &__logo {
+    @include ut.tablet {
+      order: 1;
+      margin-left: -1rem;
+    }
+  }
+
+  &__info {
+    order: 3;
+    display: none;
+
+    @include ut.tablet {
+      display: flex;
+      gap: 3.9rem;
+
+      margin-left: 2rem;
+    }
+
+    @include ut.desktop {
+      margin-left: 5.9rem;
+      gap: 0;
+    }
+
+    &-item {
+      display: flex;
+      gap: 1rem;
+
+      &_phone {
+        @include ut.desktop {
+          margin-left: 4.8rem;
+        }
+      }
+
+      &_address {
+        @include ut.tablet {
+          display: none;
+        }
+        @include ut.desktop {
+          display: flex;
+          margin-left: 6.8rem;
+        }
+      }
+    }
+
+    &-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+
+      color: #f3f3f3;
+    }
+
+    &-subtitle {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+
+      color: #898088;
+    }
+  }
+
+  &__contact-menu {
+    position: fixed;
+    background-color: red;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

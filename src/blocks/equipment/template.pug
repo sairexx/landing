@@ -1,0 +1,46 @@
+mixin equipmentItem(params={})
+  -
+    const { title, img } = params
+
+  .equipment__item
+    .equipment__item-image
+      img(src=`${imgUrl}/${img}`, alt="").equipment__item-image-source
+    .equipment__item-title #{title}
+
+mixin equipmentSlider()
+  .swiper.equipment__slider
+    .swiper-wrapper.equipment__slider-wrapper
+      .swiper-slide.equipment__slider-slide
+        +equipmentItem({title:'GNSS-приемники Topcon Hiper V', img:'equipment-1.png'})
+      .swiper-slide.equipment__slider-slide
+        +equipmentItem({title:'Тахеометр Sokkia SET 550RX', img:'equipment-2.png'})
+      .swiper-slide.equipment__slider-slide
+        +equipmentItem({title:'Дальномер Leica Disto A5', img:'equipment-3.png'})
+      .swiper-slide.equipment__slider-slide
+        +equipmentItem({title:'Детектор Bosch D-TECT 150 SV', img:'equipment-4.png'})
+    .swiper-scrollbar
+
+section.equipment
+  .equipment__container
+    header.equipment__header
+      .equipment__header-appendix 
+      h2.equipment__header-title Применяемое оборудование
+      .equipment__header-link
+        img(src=`${icnUrl}/chevron.svg` alt="").equipment__header-link-icon
+        span.equipment__header-link-text Все оборудование
+        a(href="").equipment__header-link-source
+    .equipment__grid
+      +equipmentItem({title:'GNSS-приемники Topcon Hiper V', img:'equipment-1.png'})
+      +equipmentItem({title:'Тахеометр Sokkia SET 550RX', img:'equipment-2.png'})
+      +equipmentItem({title:'Дальномер Leica Disto A5', img:'equipment-3.png'})
+      +equipmentItem({title:'Детектор Bosch D-TECT 150 SV', img:'equipment-4.png'})
+    .equipment__content
+      button.equipment__button.equipment__button_slide-prev
+        <svg width="24" height="25" viewBox="0 0 24 25" class='equipment__button-image' fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+      +equipmentSlider()
+      button.equipment__button.equipment__button_slide-next
+        <svg width="24" height="25" viewBox="0 0 24 25" class='equipment__button-image' fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>

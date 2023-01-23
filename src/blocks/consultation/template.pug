@@ -1,0 +1,17 @@
+section.consultation
+  .consultation__container
+    header.consultation__header
+      span.consultation__header-title.consultation__header-title_regular Требуется
+        span.consultation__header-title.consultation__header-title_bold консультация? 
+    form.consultation__form
+      .consultation__form-item
+        span.consultation__form-item-title Телефон
+        input(placeholder='+7 (999) 999 99 99').consultation__form-item-input 
+      .consultation__form-item
+        span.consultation__form-item-title Имя
+        input(placeholder='Иван Иванов').consultation__form-item-input
+      .consultation__form-agreement
+        img(src=`${icnUrl}/lock.svg` alt="").consultation__form-agreement-badge
+        span.consultation__form-agreement-description Я даю согласие на обработку моих персональных данных
+      button.consultation__form-button 
+        span.consultation__form-button-text перезвоните мне

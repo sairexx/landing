@@ -1,0 +1,83 @@
+mixin stagesHeader()
+  header.stages__header
+    .stages__header-appendix
+    h2.stages__header-title Этапы работ
+
+mixin stagesItem(params={})
+  -
+    const { title, description, modifier, icon, number } = params
+
+    const classModifier = icon ? 'stages__item-badge_icon' : ''
+
+  .stages__item()
+    .stages__item-badge(class=`${classModifier}`)
+      if icon
+        img(src=`${icnUrl}/done-white.svg` alt="").stages__item-badge-icon
+      span.stages__item-badge-text #{number}
+    .stages__item-info
+      span.stages__item-title #{title}
+      span.stages__item-description #{description}
+
+mixin stagesSlider()
+  .swiper.stages__slider
+    .swiper-wrapper.stages__slider-wrapper
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.1' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'}) 
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.2' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.3' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.4' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.5' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.6' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.7' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.8' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '0.9' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '1.0' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({number: '1.1' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+      .swiper-slide.stages__slider-slide
+        +stagesItem({icon: true, title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+
+    .swiper-scrollbar
+
+mixin stagesGridDesktop()
+  .stages__grid.stages__grid_desktop
+    +stagesItem({number: '0.1' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'}) 
+    +stagesItem({number: '0.2' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.3' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.4' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.5' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.6' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.7' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.8' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.9' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '1.0' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '1.1' , title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({icon: true, title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+
+mixin stagesGridTablet()
+  .stages__grid.stages__grid_tablet
+    +stagesItem({number: '0.1' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'}) 
+    +stagesItem({number: '0.2' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.3' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.4' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.5' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.6' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.7' ,title: 'Начинаем!', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({number: '0.8' ,title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+    +stagesItem({icon: true, title: 'С нами удобно', description: 'Вы можете забрать готовый отчет об оценке лично или мы доставим курьером.'})
+
+section.stages
+  .stages__container
+    +stagesHeader()
+    +stagesSlider()
+    +stagesGridTablet()
+    +stagesGridDesktop()

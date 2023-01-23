@@ -1,0 +1,427 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 0;
+  height: 6px;
+  background: #f3f3f3;
+  border-radius: 5px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-scrollbar-drag {
+  background: none;
+}
+
+.swiper-scrollbar-drag:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+  background: #ffb701;
+  border-radius: 5px;
+}
+
+.swiper-slide {
+  position: relative;
+  width: auto;
+  margin: 0;
+}
+
+.advantages {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2rem;
+
+  @include ut.tablet {
+    padding-top: 3rem;
+  }
+
+  @include ut.desktop {
+    padding-top: 7.5rem;
+    padding-bottom: 7rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 320px;
+
+    @include ut.tablet {
+      width: 727px;
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      width: 1200px;
+      gap: 5rem;
+    }
+  }
+
+  &__content {
+    @include ut.tablet {
+      display: flex;
+      align-items: center;
+
+      gap: 1rem;
+    }
+
+    @include ut.desktop {
+      align-items: flex-start;
+
+      gap: 0.9rem;
+    }
+  }
+
+  &__header {
+    @include ut.tablet {
+      display: flex;
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      gap: 6.2rem;
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.4rem;
+
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        margin: -4px 0 0 0;
+
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+      }
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: flex;
+
+        width: 40px;
+        height: 5px;
+        background-color: #c2d2df;
+        margin: 13px 0 0 0;
+      }
+
+      @include ut.desktop {
+      }
+    }
+  }
+
+  &__benefits {
+    &-container {
+      @include ut.desktop {
+        display: flex;
+        flex-direction: column;
+
+        gap: 6rem;
+      }
+    }
+
+    &-list {
+      display: none;
+
+      @include ut.tablet {
+        display: flex;
+        flex-direction: column;
+
+        gap: 1.1rem;
+      }
+
+      @include ut.desktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 639px;
+        row-gap: 3rem;
+        column-gap: 3.2rem;
+      }
+    }
+
+    &-item {
+      display: flex;
+      gap: 2rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      @include ut.desktop {
+        gap: 0.7rem;
+
+        padding-top: 0.8rem;
+      }
+
+      &-title {
+        font-style: normal;
+        font-weight: 700;
+
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        display: flex;
+        align-items: center;
+
+        color: #342633;
+
+        @include ut.desktop {
+          font-size: 2rem;
+          line-height: 2.4rem;
+        }
+      }
+
+      &-subtitle {
+        font-style: normal;
+        font-weight: 500;
+
+        width: 200px;
+
+        font-size: 1.4rem;
+        line-height: 2rem;
+
+        color: #898088;
+
+        @include ut.tablet {
+          width: 308px;
+        }
+        @include ut.desktop {
+          width: 210px;
+        }
+
+        @include ut.desktop {
+          width: 216px;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.3rem;
+          color: #898088;
+        }
+      }
+    }
+
+    &-slider {
+      width: 100%;
+      height: 107px;
+
+      @include ut.tablet {
+        display: none;
+      }
+    }
+
+    &-slide {
+      display: flex;
+      align-items: flex-start;
+
+      width: 250px;
+      height: 80px;
+
+      gap: 2rem;
+      // cursor: grab;
+    }
+
+    &-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+
+      width: 3rem;
+      height: 3rem;
+      border: 2px solid #ffb701;
+
+      @include ut.desktop {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      &-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__document {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    height: 311px;
+
+    @include ut.tablet {
+      width: 351px;
+      height: 311px;
+      margin-top: 8px;
+    }
+
+    @include ut.desktop {
+      width: 517px;
+      height: 556px;
+    }
+  }
+
+  &__document-slider {
+    width: 100%;
+
+    @include ut.desktop {
+      height: 580px;
+    }
+
+    &-button {
+      width: 4rem;
+      height: 4rem;
+
+      outline: none;
+      background-color: transparent;
+
+      border-radius: 50%;
+      border: 2px solid #898088;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+
+      padding: 8px;
+
+      @include ut.tablet {
+        &:hover {
+          border-color: #342633;
+          transition: all 0.3s ease-in-out;
+
+          .advantages__document-slider-button-image {
+            path {
+              stroke: #342633;
+              stroke-width: 2;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+
+      &-image {
+        width: 24px;
+        height: 24px;
+        transition: all 0.3s ease-in-out;
+        path {
+          transition: all 0.3s ease-in-out;
+        }
+
+        &_next {
+          transform: rotate(360deg);
+        }
+      }
+
+      &_prev {
+      }
+
+      &_next {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-content {
+      width: 220px;
+    }
+
+    &-slide {
+      width: 100%;
+      height: 100%;
+
+      @include ut.desktop {
+        width: 500px;
+        height: 500px;
+      }
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    @include ut.tablet {
+      gap: 0.7rem;
+
+      margin-top: -10px;
+    }
+
+    @include ut.desktop {
+      gap: 2rem;
+
+      display: none;
+    }
+
+    &_desktop {
+      display: none;
+
+      @include ut.desktop {
+        display: flex;
+
+        gap: 2rem;
+      }
+    }
+
+    &-text {
+      &_level-1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+
+        color: #898088;
+
+        @include ut.desktop {
+          font-size: 2rem;
+          line-height: 2.4rem;
+          width: 540px;
+        }
+      }
+
+      &_level-2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        color: #342633;
+
+        @include ut.tablet {
+          font-size: 1.6rem;
+          line-height: 1.9rem;
+        }
+
+        @include ut.desktop {
+          width: 540px;
+          font-size: 2rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+  }
+}

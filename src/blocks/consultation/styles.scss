@@ -1,0 +1,250 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.consultation {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  background: #342633;
+
+  padding: 2rem 0;
+
+  @include ut.tablet {
+    padding: 3rem 0 2.9rem;
+  }
+
+  @include ut.desktop {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+
+    width: 320px;
+
+    @include ut.tablet {
+      width: 726px;
+      gap: 3.2rem;
+    }
+
+    @include ut.desktop {
+      padding: 30px 0px 2.9rem 31px;
+
+      gap: 2.2rem;
+      width: 1202px;
+      background: #342633;
+    }
+  }
+
+  &__header {
+    &-title {
+      display: flex;
+      align-items: center;
+
+      color: #f3f3f3;
+      gap: 5px;
+
+      &_regular {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2.3rem;
+
+        letter-spacing: 0em;
+
+        text-align: left;
+
+        @include ut.desktop {
+          font-size: 2.8rem;
+          line-height: 3.2rem;
+        }
+      }
+
+      &_bold {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        letter-spacing: 0em;
+
+        text-align: left;
+
+        @include ut.desktop {
+          font-size: 2.8rem;
+          line-height: 3.4rem;
+        }
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include ut.tablet {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    @include ut.desktop {
+      gap: 4.5rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &-title {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+
+        color: #f3f3f3;
+      }
+
+      &-input {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+
+        background: #433142;
+        border-radius: 5px;
+        border: none;
+
+        color: #898088;
+
+        padding: 12px;
+
+        @include ut.tablet {
+          width: 165px;
+        }
+
+        @include ut.desktop {
+          width: 254px;
+        }
+      }
+    }
+
+    &-agreement {
+      display: flex;
+      gap: 1rem;
+
+      @include ut.tablet {
+        gap: 0.5rem;
+        margin: 0px 0 7px 0;
+        flex: 0 0 auto;
+      }
+
+      @include ut.desktop {
+        margin: 0px 0px 4px -14px;
+        gap: 2.2rem;
+      }
+
+      &-badge {
+        @include ut.tablet {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+
+        @include ut.desktop {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
+      &-description {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+
+        display: flex;
+        align-items: center;
+
+        color: #898088;
+
+        @include ut.tablet {
+          width: 143px;
+          margin: -3px 0 0 0;
+
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 1.4rem;
+        }
+
+        @include ut.desktop {
+          width: 210px;
+          margin: 2px 0 0 0;
+
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.8rem;
+        }
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 18px 40px;
+      gap: 10px;
+
+      width: 100%;
+      height: 40px;
+
+      border: none;
+      outline: none;
+      background: #ffb701;
+      border-radius: 5px;
+
+      @include ut.tablet {
+        width: 165px;
+        margin: 0px 0px 1px -8px;
+        padding: 1.2rem;
+      }
+
+      @include ut.desktop {
+        width: 247px;
+        height: 54px;
+        padding: 18.5px;
+      }
+
+      // margin: 2px 0px 0px 0;
+
+      &-text {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+
+        text-transform: uppercase;
+
+        color: #342633;
+
+        @include ut.tablet {
+          font-style: normal;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+
+          text-transform: uppercase;
+
+          color: #342633;
+        }
+
+        @include ut.desktop {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

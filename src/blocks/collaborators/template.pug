@@ -1,0 +1,48 @@
+mixin collaboratorsItem(params={})
+  -
+    const {title, img, subtitle} = params
+
+  .collaborators__item
+    .collaborators__item-image
+      img(src=`${imgUrl}/${img}` alt="").collaborators__item-image-source
+    span.collaborators__item-title #{title}
+    span.collaborators__item-subtitle #{subtitle}
+
+
+
+mixin collaboratorsSlider()
+  .swiper.collaborators__slider
+    .swiper-wrapper.collaborators__slider-wrapper
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Окружко Дмитрий Алексеевич", subtitle:'Эксперт-землеустроитель', img:'expert-1.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Афанасьева Наталья Евгеньевна", subtitle:'Эксперт документооборота', img:'expert-2.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Фомин Юрий Иванович", subtitle:'Строительный эксперт. Сметчик. Эксперт по инженерным системам', img:'expert-3.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Богданов Дмитрий Андреевич", subtitle:'Эксперт-землеустроитель', img:'expert-4.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Богданов Алексей Андреевич", subtitle:'Эксперт по электроэнергетике. Кадастровый инженер', img:'expert-5.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Окружко Дмитрий Алексеевич", subtitle:'Эксперт-землеустроитель', img:'expert-1.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Богданов Дмитрий Андреевич", subtitle:'Эксперт-землеустроитель', img:'expert-4.png'})
+      .swiper-slide.collaborators__slider-slide
+        +collaboratorsItem({title:"Окружко Дмитрий Алексеевич", subtitle:'Эксперт-землеустроитель', img:'expert-1.png'})
+    .swiper-scrollbar
+
+section.collaborators
+  .collaborators__container
+    header.collaborators__header
+      .collaborators__header-appendix 
+      h2.collaborators__header-title Наши независимые оценщики и эксперты
+    .collaborators__content
+      button.collaborators__button.collaborators__button_slide-prev
+        <svg width="24" height="25" class='collaborators__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+      +collaboratorsSlider()
+      button.collaborators__button.collaborators__button_slide-next
+        <svg width="24" height="25" viewBox="0 0 24 25" class='collaborators__button-image' fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>

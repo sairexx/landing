@@ -1,0 +1,392 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.preview {
+  position: relative;
+
+  background: linear-gradient(180deg, #342633 25%, rgba(52, 38, 51, 0) 100%),
+    linear-gradient(90deg, #342633 68.62%, rgba(52, 38, 51, 0) 100%),
+    url('../../assets/images/draftsman.jpg') no-repeat bottom 158px right -334px;
+
+  // background-position: -96% 170%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  padding-top: 0.5rem;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @include ut.tablet {
+    padding-top: 2.3rem;
+  }
+
+  @include ut.desktop {
+    padding-top: 8.2rem;
+    background: linear-gradient(180deg, #342633 8%, rgba(52, 38, 51, 0) 100%),
+      linear-gradient(90deg, #342633 68.62%, rgba(52, 38, 51, 0) 100%),
+      url(/assets/images/draftsman.jpg) no-repeat bottom 0px right 0;
+
+    background-size: contain;
+    background-position: right;
+  }
+
+  &__container {
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include ut.tablet {
+      width: 720px;
+      gap: 2rem;
+    }
+
+    @include ut.desktop {
+      gap: 2.7rem;
+      width: 1200px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include ut.tablet {
+      flex-direction: row;
+    }
+
+    @include ut.desktop {
+      gap: 10.5rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+
+    @include ut.tablet {
+      gap: 4.5rem;
+    }
+
+    @include ut.desktop {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include ut.tablet {
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      gap: 2.8rem;
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 2.9rem;
+      color: #f3f3f3;
+
+      @include ut.tablet {
+        font-size: 3rem;
+        line-height: 3.6rem;
+      }
+
+      @include ut.desktop {
+        font-size: 4rem;
+        line-height: 4.8rem;
+      }
+    }
+
+    &-subtitle {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      color: #898088;
+
+      @include ut.tablet {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+
+        color: #898088;
+      }
+
+      @include ut.desktop {
+        width: 400px;
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+      }
+    }
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include ut.tablet {
+      gap: 3rem;
+      flex-direction: row;
+    }
+
+    @include ut.desktop {
+      flex-direction: column;
+      gap: 2.9rem;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      &-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        color: #f3f3f3;
+
+        @include ut.desktop {
+          font-weight: 600;
+
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+        }
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    padding: 2rem 2rem 3.4rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+    background-color: #342633;
+
+    @include ut.desktop {
+      padding: 3rem;
+    }
+
+    @include ut.tablet {
+      width: 227px;
+      flex: 0 0 auto;
+    }
+
+    @include ut.desktop {
+      width: 301px;
+      gap: 2.2rem;
+      padding: 3rem 3rem 3rem 2.6rem;
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+
+      color: #ffffff;
+
+      @include ut.desktop {
+        font-weight: 700;
+
+        font-size: 2rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      padding: 1.1rem;
+      border: none;
+      background: #433142;
+      border-radius: 0.5rem;
+
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+
+      color: #898088;
+    }
+
+    &-button {
+      width: 100%;
+      outline: none;
+      border: none;
+      height: 40px;
+
+      font-family: vars.$default-font;
+      font-weight: 700;
+
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+
+      border-radius: 5px;
+
+      color: #342633;
+      background: #ffb701;
+
+      @include ut.desktop {
+        width: 241px;
+        height: 54px;
+      }
+    }
+  }
+
+  &__services {
+    display: none;
+
+    @include ut.tablet {
+      display: flex;
+    }
+
+    &-item {
+      border: 1px solid rgba(#f3f3f3, 0.1);
+      padding: 2rem;
+      border-top: none;
+      border-bottom: none;
+
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+      &:hover {
+        background: #ffb701;
+
+        transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+        .preview__services-item-title {
+          color: #342633;
+
+          transition: background-color 0.3s ease-out, color 0.3s ease-out;
+        }
+
+        .preview__services-item-number {
+          color: #342633;
+
+          transition: background-color 0.3s ease-out, color 0.3s ease-out;
+        }
+
+        .preview__services-item-description {
+          color: #342633;
+
+          transition: background-color 0.3s ease-out, color 0.3s ease-out;
+        }
+
+        .preview__services-item-image {
+          & path {
+            fill: #342633;
+            transition: fill 0.3s ease-out;
+          }
+        }
+      }
+
+      @include ut.desktop {
+        padding: 4.8rem 4rem 7.2rem 4rem;
+        border: none;
+      }
+
+      &-info {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.1rem;
+        margin-bottom: 1.1rem;
+      }
+
+      &-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4rem;
+        height: 4rem;
+
+        transition: fill 0.3s ease-out;
+
+        @include ut.desktop {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
+      &-number {
+        font-style: normal;
+        font-weight: 250;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+
+        text-transform: uppercase;
+
+        color: #898088;
+
+        transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      }
+
+      &-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+
+        color: #f3f3f3;
+
+        transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      }
+      &-description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 2rem;
+
+        color: #898088;
+
+        transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+        @include ut.desktop {
+          font-size: 1.6rem;
+          line-height: 2.3rem;
+
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+}

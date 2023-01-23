@@ -1,0 +1,210 @@
+-
+  const mocks = [
+  'Строительная экспертиза', 'Экспертиза зданий и сооружений',
+  'Экспертиза инженерных коммуникаций',
+  'Экспертиза квартиры для суда',
+  'Экспертиза квартиры для суда',
+  'Экспертиза дома',
+  'Землеустроительная экспертиза',
+  'Геодезические работы',
+  'Геодезические работы',
+  ]
+
+  const sidebarLinks = [
+    'Наши услуги',
+    'Прайс-лист',
+    'О компании',
+    'Блог',
+    'Вакансии',
+    'Вопрос/ответ',
+    'Наши работы',
+    'Наши сотрудники',
+    'Наши реквизиты',
+    'Оборудование',
+    'Контакты',
+    'Отзывы',
+    'Наши сертификаты',
+    'Гарантии',
+    'Оплата',
+    'Мы в сми'
+  ]
+
+  const columnExpertise = [
+    'Строительная экспертиза',
+    'Экспертиза зданий и сооружений',
+    'Экспертиза инженерных коммуникаций',
+    'Экспертиза квартиры для суда',
+    'Экспертиза дома',
+    'Землеустроительная экспертиза',
+    'Геодезические работы',
+    'Пожарная экспертиза',
+    'Экологическая экспертиза',
+    'Бухгалтерская экспертиза',
+    'Техническая экспертиза',
+    'Экспертиза рекламных конструкций',
+    'Экспертиза дорог и дорожных покрытий (Частота за год)',
+    'Экспертиза бани (Частота за год)',
+    'Искусствоведческая экспертиза',
+    'Электротехническая экспертиза',
+  ]
+
+  const columnRate = [
+    'Независимая оценка квартиры',
+    'Оценка ущерба после пожара',
+    'Оценка стоимости земельного участка (Частота за год)',
+    'Оценка ноу хау',
+    'Оценка патента',
+    'Оценка товарного знака',
+    'Оценка стоимости бизнеса',
+    'Оценка стоимости недвижимости',
+    'Оценка оборудования',
+    'Оценка коммерческой недвижимости',
+    'Оценка аренды недвижимости',
+  ]
+
+  const columnAudit = [
+    'Пожарный аудит',
+    'Строительный аудит',
+    'Экологический аудит',
+    'Юридические услуги',
+    'Оспаривание кадастровой стоимости',
+    'Юридическая экспертиза договора',
+    'Рецензия на экспертизу',
+  ]
+
+mixin accordions(params={})
+  -
+    const {id1, id2, id3} = params
+
+  .services-menu__accordion-content-accordion
+    label(for=`${id1}`).services-menu__accordion-content-accordion-label
+    input(type="checkbox" id=`${id1}`).services-menu__accordion-content-accordion-input
+    header.services-menu__accordion-content-accordion-header
+      span.services-menu__accordion-content-accordion-header-number 0.1
+      span.services-menu__accordion-content-accordion-header-title Экспертиза
+      img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-accordion-header-icon
+
+    .services-menu__accordion-content-accordion-list
+      each val in mocks
+        .services-menu__accordion-content-accordion-list-item
+          img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__accordion-content-accordion-list-item-icon
+          a(href="").services-menu__accordion-content-accordion-list-item-link #{val}
+  .services-menu__accordion-content-accordion
+    label(for=`${id2}`).services-menu__accordion-content-accordion-label
+    input(type="checkbox" id=`${id2}`).services-menu__accordion-content-accordion-input
+    header.services-menu__accordion-content-accordion-header
+      span.services-menu__accordion-content-accordion-header-number 0.2
+      span.services-menu__accordion-content-accordion-header-title Оценка
+      img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-accordion-header-icon
+
+    .services-menu__accordion-content-accordion-list
+      each val in mocks
+        .services-menu__accordion-content-accordion-list-item
+          img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__accordion-content-accordion-list-item-icon
+          a(href="").services-menu__accordion-content-accordion-list-item-link #{val}
+
+  .services-menu__accordion-content-accordion
+    label(for=`${id3}`).services-menu__accordion-content-accordion-label
+    input(type="checkbox" id=`${id3}`).services-menu__accordion-content-accordion-input
+    header.services-menu__accordion-content-accordion-header
+      span.services-menu__accordion-content-accordion-header-number 0.3
+      span.services-menu__accordion-content-accordion-header-title Аудит
+      img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-accordion-header-icon
+    .services-menu__accordion-content-accordion-list
+      each val in mocks
+        .services-menu__accordion-content-accordion-list-item
+          img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__accordion-content-accordion-list-item-icon
+          a(href="").services-menu__accordion-content-accordion-list-item-link #{val}
+
+
+mixin mobileMenuAccordion()
+  .services-menu__accordion
+    label(for='services').services-menu__accordion-label
+    input(type="checkbox" id='services').services-menu__accordion-input
+    header.services-menu__accordion-header
+      .services-menu__accordion-header-text Наши услуги
+      img(src=`${icnUrl}/accordion-arrow.svg`, alt="").services-menu__accordion-header-icon
+    .services-menu__accordion-content
+      header.services-menu__accordion-content-header
+        h4.services-menu__accordion-content-header-title Наши услуги
+        .services-menu__accordion-content-header-link
+          img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-header-link-icon
+          span.services-menu__accordion-content-header-link-text Все услуги
+          a(href="").services-menu__accordion-content-header-link-source
+
+      +accordions({id1:'sercices-mobile',id2:'rate-mobile', id3:'audit-mobile'})
+
+section.services-menu
+  .services-menu__container.services-menu__container_mobile
+    .services-menu__title Меню
+    .services-menu__links-list
+      +mobileMenuAccordion()
+      a(href="").services-menu__link Прайс-лист
+      a(href="").services-menu__link О компании
+      a(href="").services-menu__link Блог
+      a(href="").services-menu__link Вакансии
+      a(href="").services-menu__link Вопрос/ответ
+      a(href="").services-menu__link Наши работы
+      a(href="").services-menu__link Наши сотрудники
+      a(href="").services-menu__link Наши реквизиты
+      a(href="").services-menu__link Оборудование
+      a(href="").services-menu__link Контакты
+      a(href="").services-menu__link Отзывы
+      a(href="").services-menu__link Наши сертификаты
+      a(href="").services-menu__link Гарантии
+      a(href="").services-menu__link Оплата
+      a(href="").services-menu__link Мы в СМИ
+
+
+  .services-menu__container.services-menu__container_tablet
+    .services-menu__sidebar
+      h3.services-menu__sidebar-title Меню
+      .services-menu__sidebar-appendix
+      .services-menu__sidebar-list
+        each item in sidebarLinks
+          a(href="").services-menu__sidebar-list-link #{item}
+      button.services-menu__sidebar-button Консультация
+        a(href="").services-menu__sidebar-button-link
+    .services-menu__content
+      header.services-menu__accordion-content-header
+        h4.services-menu__accordion-content-header-title Наши услуги
+        .services-menu__accordion-content-header-link
+          img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-header-link-icon
+          span.services-menu__accordion-content-header-link-text Все услуги
+          a(href="").services-menu__accordion-content-header-link-source
+      +accordions({id1:'sercices-tablet', id2:'rate-tablet', id3:'audit-tablet'})
+    .services-menu__grid
+      header.services-menu__accordion-content-header
+        h4.services-menu__accordion-content-header-title Наши услуги
+        .services-menu__accordion-content-header-link
+          img(src=`${icnUrl}/accordion-arrow.svg` alt="").services-menu__accordion-content-header-link-icon
+          span.services-menu__accordion-content-header-link-text Все услуги
+          a(href="").services-menu__accordion-content-header-link-source
+      .services-menu__grid-content
+        .services-menu__grid-column
+          header.services-menu__grid-column-header
+            span.services-menu__grid-column-header-number 0.1
+            span.services-menu__grid-column-header-title Экспертиза
+          .services-menu__grid-column-list
+            each item in columnExpertise
+              .services-menu__grid-item
+                img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__grid-item-icon
+                a(href="").services-menu__grid-item-link #{item}
+        .services-menu__grid-column
+          header.services-menu__grid-column-header
+            span.services-menu__grid-column-header-number 0.2
+            span.services-menu__grid-column-header-title Оценка
+          .services-menu__grid-column-list
+            each item in columnRate
+              .services-menu__grid-item
+                img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__grid-item-icon
+                a(href="").services-menu__grid-item-link #{item}
+        .services-menu__grid-column
+          header.services-menu__grid-column-header
+            span.services-menu__grid-column-header-number 0.3
+            span.services-menu__grid-column-header-title Аудит
+          .services-menu__grid-column-list
+            each item in columnAudit
+              .services-menu__grid-item
+                img(src=`${icnUrl}/link-arrow-right.svg` alt="").services-menu__grid-item-icon
+                a(href="").services-menu__grid-item-link #{item}

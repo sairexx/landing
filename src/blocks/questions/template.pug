@@ -1,0 +1,43 @@
+mixin questionItem(params={})
+  -
+    const { text, id } = params
+
+  .question__item
+    label(for=`${id}`).question__item-label
+    input(type="checkbox" id=`${id}`).question__item-input
+    header.question__item-header
+      .question__item-header-text #{text}
+      img(src=`${icnUrl}/accordion-arrow.svg`, alt="").question__item-header-icon
+    .question__item-content  Задача организации, в особенности же дальнейшее развитие различных форм деятельности требуют определения и уточнения новых предложений. С другой стороны начало повседневной работы по формированию позиции способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Товарищи! реализация намеченных плановых заданий играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании модели развития.
+
+section.question
+  .question__container
+    header.question__header
+      .question__header-appendix 
+      h2.question__header-title Вопрос&ответ
+    .question__content
+      +questionItem({text:'Можно ли заменить одно стекло в стеклопакете?', id:"1"})
+      +questionItem({text:'Можно ли заменить одно стекло в стеклопакете?', id:"2"})
+      +questionItem({text:'Оценочная компания «Экспертиза и управление недвижимостью». Услуги независимой оценки в Москве', id:"3"})
+      +questionItem({text:'Независимая оценка качества и стоимости лучшими специалистами Москвы', id:"4"})
+      +questionItem({text:'В своей работе мы ориентируется, прежде всего, на нормативы действующего законодательства относительно', id:"5"})
+      +questionItem({text:'Провести кадастровые работы по обследованию и подготовке Технического плана на объект с целью его ввода', id:"6"})
+      +questionItem({text:'Определить площадь и границы на местности земельного участка (по фактическому землепользованию)', id:"7"})
+    .question__consultation
+      header.question__consultation-header
+        h4.question__consultation-header-title Требуется консультация?
+      .question__consultation-content 
+        .question__consultation-content-item
+          span.question__consultation-content-item-caption Имя
+          input(placeholder='Иван Иванов').question__consultation-content-item-input
+        .question__consultation-content-item
+          span.question__consultation-content-item-caption Телефон
+          input(placeholder='+7 (999) 999 99 99').question__consultation-content-item-input
+        .question__consultation-content-item
+          span.question__consultation-content-item-caption Почта
+          input(placeholder='example@mail.ru').question__consultation-content-item-input
+      .question__consultation-submit
+        .question__consultation-submit-badge
+          img(src=`${icnUrl}/lock-light.svg` alt="").question__consultation-submit-badge-icon
+          span.question__consultation-submit-badge-text Я даю согласие на обработку моих персональных данных
+        button.question__consultation-submit-button Заказать экспертизу

@@ -1,0 +1,51 @@
+mixin videosItem(params={})
+  -
+    const { text, img } = params
+
+  .videos__item
+    img(src=`${imgUrl}/${img}` alt="").videos__item-image
+    .videos__item-overlay
+    a(href="").videos__item-link
+    .videos__item-info
+      button.videos__item-info-button
+        img(src=`${icnUrl}/play.svg` alt="").videos__item-info-button-icon
+        a(href="").videos__item-link
+      .videos__item-info-text #{text}
+
+mixin videosSlider()
+  .swiper.videos__slider
+    .swiper-wrapper.videos__slider-wrapper
+      .swiper-slide.videos__slider-slide
+        +videosItem({ text:'Общество с ограниченной ответственностью «Финмаркт»', img:'video-review-1.png'})
+      .swiper-slide.videos__slider-slide
+        +videosItem({ text:'Общество с ограниченной ответственностью «Финмаркт»', img:'video-review-2.jpg'})
+      .swiper-slide.videos__slider-slide
+        +videosItem({ text:'Общество с ограниченной ответственностью «Финмаркт»', img:'video-review-3.jpg'})
+      .swiper-slide.videos__slider-slide
+        +videosItem({ text:'Общество с ограниченной ответственностью «Финмаркт»', img:'video-review-1.png'})
+    .swiper-scrollbar
+    .slider-after
+      button.slider__button.slider__button_slide-next
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+    .slider-before
+      button.slider__button.slider__button_slide-prev
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+section.videos
+  .videos__container
+    header.videos__header
+      .videos__header-appendix 
+      h2.videos__header-title Видеоотзывы о нашей работе
+    .videos__content
+      button.videos__button.videos__button_slide-prev
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+      +videosSlider()
+      button.videos__button.videos__button_slide-next
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>

@@ -1,0 +1,245 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.stages {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+
+  width: 100%;
+
+  @include ut.tablet {
+    padding: 3rem 0 0 0;
+  }
+
+  @include ut.desktop {
+    padding: 7.5rem 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 320px;
+
+    @include ut.tablet {
+      width: 726px;
+    }
+
+    @include ut.desktop {
+      gap: 7rem;
+      width: 1201px;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    @include ut.tablet {
+      gap: 2.9rem;
+    }
+
+    @include ut.desktop {
+      gap: 6.3rem;
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: block;
+        width: 40px;
+        height: 5px;
+
+        background-color: #c2d2df;
+
+        margin-top: 1.6rem;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.4rem;
+
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+
+        margin: -4px 0 0 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 2rem;
+
+    &-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 3rem;
+      height: 3rem;
+
+      background: #f3f3f3;
+      border: 2px solid #ffb701;
+
+      @include ut.desktop {
+        width: 40px;
+        height: 40px;
+      }
+
+      &_icon {
+        border: none;
+        background: #ffb701;
+      }
+
+      &-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      &-text {
+        font-style: normal;
+        font-weight: 250;
+
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #342633;
+
+        @include ut.desktop {
+          font-size: 2rem;
+          line-height: 2.3rem;
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      padding-top: 0.5rem;
+      gap: 0.6rem;
+
+      @include ut.desktop {
+        padding-top: 0.8rem;
+        gap: 0.8rem;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+
+      display: flex;
+      align-items: center;
+
+      color: #342633;
+
+      @include ut.desktop {
+        font-size: 2rem;
+        line-height: 2.4rem;
+
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-description {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      color: #898088;
+
+      width: 177px;
+
+      @include ut.desktop {
+        width: 210px;
+
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 136px;
+
+    @include ut.tablet {
+      display: none;
+    }
+
+    &-wrapper {
+    }
+    &-slide {
+    }
+
+    .swiper__scrollbar {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    display: none;
+
+    &_desktop {
+      display: none;
+
+      @include ut.desktop {
+        display: flex;
+        flex-wrap: wrap;
+
+        column-gap: 3.8rem;
+        row-gap: 8rem;
+        padding: 35px 0 103px 0;
+
+        background-image: url(../../assets/images/stages-desktop.png);
+        background-repeat: no-repeat;
+        background-position: 19px 12px;
+      }
+    }
+
+    &_tablet {
+      display: none;
+
+      @include ut.tablet {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+        row-gap: 5rem;
+        padding: 32px 0 59px 0px;
+
+        background-image: url(../../assets/images/stages-tablet.png);
+        background-repeat: no-repeat;
+        background-position: 13px 9px;
+      }
+
+      @include ut.desktop {
+        display: none;
+      }
+    }
+  }
+}

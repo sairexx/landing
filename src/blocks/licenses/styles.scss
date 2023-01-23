@@ -1,0 +1,191 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.licenses {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 1.8rem 0 2rem 0;
+
+  background: #fcfcfd;
+
+  @include ut.tablet {
+    padding: 3rem;
+  }
+
+  @include ut.desktop {
+    padding: 7.2rem 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    width: 320px;
+    gap: 2rem;
+
+    @include ut.tablet {
+      width: 726px;
+      gap: 3.2rem;
+    }
+
+    @include ut.desktop {
+      width: 1200px;
+      gap: 5rem;
+      padding-bottom: 5.9rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    @include ut.tablet {
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      gap: 6.3rem;
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: block;
+        width: 40px;
+        height: 5px;
+
+        background-color: #c2d2df;
+
+        margin-top: 1.1rem;
+      }
+
+      @include ut.desktop {
+        margin-top: 1.9rem;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        color: #342633;
+
+        width: 300px;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include ut.tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      background: transparent;
+      border: 2px solid #898088;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-color: #342633;
+        transition: all 0.3s ease-in-out;
+
+        .licenses__button-image {
+          path {
+            stroke: #342633;
+            stroke-width: 2;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &-image {
+      path {
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    &_slide-prev {
+      // margin: 0 30px 0px 0;
+
+      @include ut.desktop {
+        margin: 0 0px 0px 0px;
+      }
+    }
+
+    &_slide-next {
+      margin: 0 7px 0px 0px;
+      transform: rotate(180deg);
+
+      @include ut.desktop {
+        margin: 0 1px 0px 0px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @include ut.desktop {
+      padding: 0 3rem;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 210px;
+
+    @include ut.tablet {
+      height: 186px;
+      width: 580px;
+
+      .swiper-scrollbar {
+        display: none;
+      }
+    }
+
+    @include ut.desktop {
+      width: 995px;
+      height: 319px;
+    }
+
+    &-wrapper {
+    }
+    &-slide {
+      width: 130px;
+      height: 182px;
+
+      @include ut.desktop {
+        width: 226px;
+        height: 315px;
+      }
+
+      &-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

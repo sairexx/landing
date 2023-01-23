@@ -1,0 +1,38 @@
+header.header
+  .header__content 
+    button.header__button.header__button_menu
+      img(src=`${icnUrl}/header-menu.svg` alt="").header__button-icon.header__button-icon_menu_close
+      img(src="" alt="").header__button-icon.header__button-icon_menu_open
+
+    .header__logo
+      img(src=`${imgUrl}/header-logo.png` alt="")
+
+    button.header__button.header__button_contacts
+      img(src=`${icnUrl}/header-contacts.svg` alt="").header__button-icon.header__button-icon_contacts_close
+      img(src="" alt="").header__button-icon.header__button-icon_contacts_open
+
+    .header__info
+      .header__info-item.header__info-item_mail
+        .header__info-icon
+          img(src=`${icnUrl}/mail.svg` alt="")
+        .header__info-content
+          span.header__info-title info@eunpro.ru
+          span.header__info-subtitle Мы на связи!
+
+      .header__info-item.header__info-item_phone
+        .header__info-icon
+          img(src=`${icnUrl}/phone-grey.svg` alt="")
+        .header__info-content
+          span.header__info-title 8 800 419-25-30
+          span.header__info-subtitle +7 (495) 419-25-30
+
+      .header__info-item.header__info-item_address
+        .header__info-item
+          .header__info-icon
+            img(src=`${icnUrl}/location.svg` alt="")
+          .header__info-content
+            span.header__info-title ул. Октябрьская, 4к2
+            span.header__info-subtitle Пн-Пт с 9:00 до 18:00
+
+    button.header__button.header__button_call
+      span.header__button-text Обратный звонок

@@ -1,0 +1,369 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.slider__button {
+  @include ut.tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: transparent;
+    border: 2px solid #898088;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: #342633;
+      transition: all 0.3s ease-in-out;
+
+      .licenses__button-image {
+        path {
+          stroke: #342633;
+          stroke-width: 2;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &-image {
+    path {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &_slide-prev {
+    @include ut.desktop {
+      margin: 0 0px 0px 0px;
+    }
+  }
+
+  &_slide-next {
+    transform: rotate(180deg);
+  }
+}
+
+.slider-after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  float: right;
+  width: 173px;
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+
+  background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  content: '';
+  z-index: 4;
+
+  button {
+    margin: -59px -66px 0px 0px;
+  }
+}
+
+.slider-before {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 173px;
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+
+  z-index: 4;
+  background: linear-gradient(91deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+
+  button {
+    margin: 29px -104px 0px 0px;
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 2.2rem 0 2rem 0;
+
+  background: #fcfcfd;
+
+  @include ut.tablet {
+    padding: 33px 0 0 0;
+  }
+
+  @include ut.desktop {
+    padding: 7px 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    width: 320px;
+    gap: 2rem;
+
+    @include ut.tablet {
+      width: 726px;
+      gap: 3.2rem;
+    }
+
+    @include ut.desktop {
+      width: 1200px;
+      gap: 50px;
+      padding: 0 0 93px 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    @include ut.tablet {
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      gap: 6.3rem;
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: block;
+        width: 40px;
+        height: 5px;
+
+        background-color: #c2d2df;
+
+        margin-top: 1.4rem;
+      }
+
+      @include ut.desktop {
+        margin-top: 1.9rem;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        color: #342633;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include ut.tablet {
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      background: transparent;
+      border: 2px solid #898088;
+      border-radius: 50px;
+    }
+
+    &_slide-prev {
+      @include ut.desktop {
+        margin: 0 0px 120px 0px;
+      }
+    }
+
+    &_slide-next {
+      margin: 0 7px 0px 0px;
+      transform: rotate(180deg);
+
+      @include ut.desktop {
+        margin: 0 4px 117px 0px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 414px;
+
+    @include ut.tablet {
+      width: 726px;
+      height: 288px;
+
+      .swiper-scrollbar {
+        display: none;
+      }
+    }
+
+    @include ut.desktop {
+      width: 100%;
+      height: 285px;
+    }
+    .slider-after {
+      button {
+        margin: -29px -66px 0px 0px;
+      }
+    }
+    .slider-before {
+      margin: -29px 0 0px -66px;
+    }
+
+    &-wrapper {
+    }
+
+    &-slide {
+      &:first-child {
+        margin-left: 15px;
+
+        @include ut.tablet {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    width: 288px;
+    height: 388px;
+
+    padding: 2rem;
+
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    @include ut.tablet {
+      flex-direction: row;
+      padding: 3rem;
+      width: 483px;
+      height: 260px;
+    }
+
+    &-image {
+      width: 125px;
+      height: 172px;
+
+      @include ut.tablet {
+        flex: 0 0 auto;
+        width: 145px;
+        height: 200px;
+      }
+
+      &-source {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include ut.tablet {
+        margin: -12px 0px 0 0;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+
+      color: #342633;
+
+      @include ut.tablet {
+        font-size: 1.6rem;
+        line-height: 3rem;
+      }
+    }
+
+    &-description {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: #898088;
+
+      @include ut.tablet {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+      }
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      color: #342633;
+    }
+
+    &-link {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+      margin: -7px 0 0 0px;
+
+      &-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      &-text {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: #898088;
+
+        @include ut.tablet {
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 1.9rem;
+        }
+      }
+
+      &-source {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

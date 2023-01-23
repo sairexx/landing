@@ -1,0 +1,158 @@
+mixin workHeader()
+  header.work__header
+    .work__header-container
+      .work__header-appendix
+      h2.work__header-title Примеры наших работ
+    .swiper.work__header-tabs
+      .swiper-wrapper
+        .swiper-slide
+          button(data-content='firstSlider').work__header-tab.work__header-tab_active Все работы
+        .swiper-slide
+          button(data-content='secondSlider').work__header-tab Экспертиза
+        .swiper-slide
+          button(data-content='thirdSlider').work__header-tab Экологическая
+        .swiper-slide
+          button(data-content='fourSlider').work__header-tab Землеустройство
+        .swiper-slide
+          button(data-content='fiveSlider').work__header-tab Обследование
+
+mixin workAdvancedItem()
+  .work__advanced-item
+    .work__advanced-item-preview
+      .work__advanced-item-preview-overlay
+      img(src=`${imgUrl}/advanced-item-first.jpg` alt="").work__advanced-item-preview-image
+      span.work__advanced-item-preview-title Общество с ограниченной ответственностью «Финмаркт»
+      .work__advanced-item-preview-link
+        img(src=`${icnUrl}/arrow-right.svg`, alt="").work__advanced-item-preview-link-icon
+        .work__advanced-item-preview-link-text Подробнее
+        a(href="").work__advanced-item-preview-link-source
+
+    .work__advanced-item-details
+      .work__advanced-item-details-info 
+        span.work__advanced-item-details-info-title Объект:
+        p.work__advanced-item-details-info-description Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный центр Сколково, ул. Нобеля   
+      .work__advanced-item-details-info
+        span.work__advanced-item-details-info-title Вид экспертизы:
+        p.work__advanced-item-details-info-description Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы. 
+      .work__advanced-item-details-info
+        span.work__advanced-item-details-info-title Результат экспертизы:
+        p.work__advanced-item-details-info-description Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно функционирует.
+      button.work__advanced-item-details-button Хочу так же!
+        a(href="").work__advanced-item-details-button-link
+
+mixin workItem(params={})
+  -
+    const { title, img } = params 
+
+  .work__item
+    img(src=`${imgUrl}/${img}` alt="").work__item-image
+    span.work__item-title #{title}
+    .work__item-overlay
+    a(href="").work__item-link
+    button.work__item-button Хочу так же 
+      a(href="").work__item-button-link
+
+
+mixin workSliderFirst()
+  .swiper.work__slider.work__tab-content(data-target='firstSlider')
+    .swiper-wrapper.work__slider-wrapper
+      .swiper-slide.work__slider-slide
+        +workAdvancedItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-1.jpg"})
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-2.jpg"})
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-2.jpg"})
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-1.jpg"})
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-1.jpg"})
+          +workItem({title:'Общество с ограниченной ответственностью «Финмаркт»', img:"work-item-first-2.jpg"})
+    .swiper-scrollbar
+
+mixin workSliderExpertise()
+  .swiper.work__slider.work__tab-content(data-target='secondSlider')
+    .swiper-wrapper.work__slider-wrapper
+      .swiper-slide.work__slider-slide
+        +workAdvancedItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+    .swiper-scrollbar
+
+mixin workSliderEco()
+  .swiper.work__slider.work__tab-content(data-target='thirdSlider')
+    .swiper-wrapper.work__slider-wrapper
+      .swiper-slide.work__slider-slide
+        +workAdvancedItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+    .swiper-scrollbar
+
+mixin workSliderLand()
+  .swiper.work__slider.work__tab-content(data-target='fourSlider')
+    .swiper-wrapper.work__slider-wrapper
+      .swiper-slide.work__slider-slide
+        +workAdvancedItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+    .swiper-scrollbar
+
+mixin workSliderSurvey()
+  .swiper.work__slider.work__tab-content(data-target='fiveSlider')
+    .swiper-wrapper.work__slider-wrapper
+      .swiper-slide.work__slider-slide
+        +workAdvancedItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+      .swiper-slide.work__slider-slide
+        .work__slide-container
+          +workItem()
+          +workItem()
+    .swiper-scrollbar
+
+section.work
+  .work__container
+    +workHeader()
+    +workSliderFirst()
+    +workSliderExpertise()
+    +workSliderEco()
+    +workSliderLand()
+    +workSliderSurvey()

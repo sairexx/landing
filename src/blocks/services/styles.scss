@@ -1,0 +1,354 @@
+@use 'styles/utils' as ut;
+@use 'styles/variables' as vars;
+
+.services {
+  display: flex;
+  justify-content: center;
+
+  padding: 4rem 0 2rem 0;
+
+  @include ut.tablet {
+    padding: 5.1rem 0 0 0;
+  }
+
+  @include ut.desktop {
+    padding: 7.1rem 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 320px;
+
+    @include ut.tablet {
+      width: 100%;
+      gap: 3rem;
+    }
+
+    @include ut.desktop {
+      width: 1200px;
+      gap: 4.8rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    align-self: flex-start;
+
+    @include ut.tablet {
+      width: 727px;
+      align-self: center;
+    }
+
+    @include ut.desktop {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-container {
+      display: flex;
+      gap: 3rem;
+
+      @include ut.desktop {
+        gap: 6.2rem;
+      }
+    }
+
+    &-appendix {
+      display: none;
+
+      @include ut.tablet {
+        display: block;
+        width: 40px;
+        height: 5px;
+
+        background-color: #c2d2df;
+
+        margin-top: 1.6rem;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+
+      font-size: 2rem;
+      line-height: 2.4rem;
+
+      color: #342633;
+      margin: 0 0px 0 2px;
+
+      @include ut.tablet {
+        margin: 0;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include ut.desktop {
+        width: 300px;
+
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+
+        color: #342633;
+      }
+    }
+
+    &-link {
+      position: relative;
+
+      display: none;
+
+      @include ut.desktop {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        margin: -30px 2px 0 0;
+      }
+
+      &-text {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+
+        display: flex;
+        align-items: center;
+
+        color: #111e2f;
+      }
+
+      &-source {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      &-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 227px;
+
+    @include ut.tablet {
+      display: none;
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+
+    &-slide {
+      height: 50px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+    height: 90%;
+
+    border-left: 2px solid rgba(#c2d2df, 0.1);
+
+    @include ut.tablet {
+      height: 100%;
+      padding: 2rem 3rem;
+    }
+
+    &:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 183, 1, 0.9),
+          rgba(255, 183, 1, 0.9)
+        ),
+        url(../../assets/images/services-hover.jpg);
+      background-clip: border-box;
+      background-size: cover;
+
+      .services__item-description {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .services__item-link {
+        opacity: 1;
+        pointer-events: all;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+
+      color: #342633;
+
+      width: 150px;
+
+      @include ut.tablet {
+        width: 304px;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+      }
+    }
+
+    &-description {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      width: 180px;
+
+      color: #898088;
+      transition: all 0.3s ease-in-out;
+
+      @include ut.tablet {
+        width: 290px;
+      }
+
+      @include ut.desktop {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      bottom: 28px;
+      left: 30px;
+      opacity: 0;
+
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+
+      color: #342633;
+      pointer-events: none;
+
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__grid {
+    &_tablet {
+      display: none;
+      width: 100%;
+
+      @include ut.tablet {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 3rem;
+      }
+      @include ut.desktop {
+        display: none;
+      }
+    }
+
+    &_desktop {
+      display: none;
+
+      @include ut.desktop {
+        display: flex;
+        flex-wrap: wrap;
+
+        .services__item {
+          width: 300px;
+          height: fit-content;
+
+          padding: 2rem 3rem 2rem 2.7rem;
+
+          &_upper {
+            // border-right: 2px solid rgba(#c2d2df, 0.1);
+
+            &:nth-child(4) {
+              border-right: 2px solid rgba(#c2d2df, 0.1);
+            }
+          }
+
+          &_lower {
+            padding: 3.8rem 3rem 3rem 2.7rem;
+
+            border-top: 2px solid rgba(#c2d2df, 0.1);
+
+            &:last-child {
+              border-right: 2px solid rgba(#c2d2df, 0.1);
+            }
+          }
+
+          &-title {
+            width: 240px;
+          }
+          &-description {
+            width: 245px;
+          }
+        }
+      }
+    }
+
+    &-row {
+      display: flex;
+      justify-content: center;
+
+      &:first-child {
+        border-bottom: 2px solid rgba(#c2d2df, 0.1);
+      }
+
+      &-container {
+        display: flex;
+        width: 732px;
+        justify-content: space-between;
+
+        &_lower {
+          .services__item {
+            padding: 18px 26px 20px 30px;
+
+            &:last-child {
+              margin-left: 18px;
+            }
+          }
+        }
+
+        &_upper {
+          .services__item {
+            &:first-child {
+              flex: 0 0 auto;
+              border-right: 2px solid rgba(#c2d2df, 0.1);
+              padding: 20px 26px 20px 30px;
+            }
+
+            &:last-child {
+              margin-left: 18px;
+              padding: 20px 26px 20px 30px;
+              border-left: 0;
+              border-right: 2px solid rgba(#c2d2df, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

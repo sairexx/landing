@@ -1,0 +1,36 @@
+mixin licensesSlider()
+  .swiper.licenses__slider
+    .swiper-wrapper.licenses__slider-wrapper
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+      .swiper-slide.licenses__slider-slide
+        img(src=`${imgUrl}/license.png` alt="").licenses__slider-slide-image
+    .swiper-scrollbar
+
+section.licenses
+  .licenses__container
+    header.licenses__header
+      .licenses__header-appendix 
+      h2.licenses__header-title Наши сертификаты и лицензии
+    .licenses__content
+      button.licenses__button.licenses__button_slide-prev
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>
+      +licensesSlider()
+      button.licenses__button.licenses__button_slide-next
+        <svg width="24" height="25" class='licenses__button-image' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+        </svg>

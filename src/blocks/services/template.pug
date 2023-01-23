@@ -1,0 +1,70 @@
+mixin servicesHeader()
+  header.services__header
+    .services__header-container
+      .services__header-appendix
+      h2.services__header-title Услуги, которые мы оказываем
+    .services__header-link
+      img(src=`${icnUrl}/chevron.svg` alt="").services__header-link-icon
+      span.services__header-link-text Все услуги
+      a(href="").services__header-link-source
+
+mixin servicesItem(params={})
+  -
+    const { title, description, modifier } = params
+
+    const classModifier = modifier ? modifier : ''
+
+  .services__item(class=`${classModifier}`)
+    span.services__item-title #{title}
+    span.services__item-description #{description}
+    a(href="").services__item-link нужна консультация
+
+mixin servicesSlider()
+  .swiper.services__slider
+    .swiper-wrapper.services__slider-wrapper
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оспраривание кадастровой стоимости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'}) 
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка коммерческой недвижемости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка загородных домов и коттеджей', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оспраривание кадастровой стоимости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка коммерческой недвижемости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+      .swiper-slide.services__slider-slide
+        +servicesItem({title: 'Оценка загородных домов и коттеджей', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    .swiper-scrollbar
+
+mixin servicesGridTablet()
+  .services__grid.services__grid_tablet
+    .services__grid-row
+      .services__grid-row-container.services__grid-row-container_upper
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    .services__grid-row
+      .services__grid-row-container.services__grid-row-container_lower
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+        +servicesItem({title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+
+mixin servicesGridDesktop()
+  .services__grid.services__grid_desktop
+    +servicesItem({modifier: 'services__item_upper', title: 'Оспраривание кадастровой стоимости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'}) 
+    +servicesItem({modifier: 'services__item_upper', title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_upper', title: 'Оценка коммерческой недвижемости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_upper', title: 'Оценка загородных домов и коттеджей', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_lower', title: 'Оспраривание кадастровой стоимости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_lower', title: 'Оценка стоимости нанесённого ущерба', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_lower', title: 'Оценка коммерческой недвижемости', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+    +servicesItem({modifier: 'services__item_lower', title: 'Оценка загородных домов и коттеджей', description: 'Налог на недвижемость рассчитывается исходя из кадастровой стоимости. Она бывает завышена, но этот факт необходимо обосновать'})
+
+section.services
+  .services__container
+    +servicesHeader()
+    +servicesSlider()
+    +servicesGridTablet()
+    +servicesGridDesktop()
